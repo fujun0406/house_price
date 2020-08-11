@@ -170,5 +170,17 @@ The result of alpha and mean test score plot in Figure 9 shows that the value be
 According to the above, we can notice that this dataset is high dimensional input. And there are some variables are continuous variables. In this project, we consider use ridge regression and lasso regression. Using the Ridge regression can shrink some  𝛽  tend to  0  but still need to consider all of varibales. Using lasso regression can shrink coefficient to 0 but according to the performance of validation dataset, it shows the ridge regression is more better. Then, we base on the reslut of all variables to omit some variables which can prevent multicollinearity issue and simplify the complexity of model.
 
 ## Result
+Overview the final model:
+1. We drop the variable of `garage_cars`, `full_bath`, `bedroom`, `ac` and `zoning`, so we use the rest of variables to build model. Therefore, we include `year_sold`, `year_built`, `lot_area`, `basement_area`, `living_area`, `half_bath`, `garage_area`, `neighborhood`, `quality` and `condition` into model.
+2. There are some variables are skewed (ex. `sale_price`, `year_built`, `lot_area` and `living_area`), so before we put into model we will use log to hanlde skewness.
+
+After that, we employ this model on testing dataset. The RMSE plot shows in Figure 11. 
+
+<img src="/image/testing.png" width="400"/> 
+
+<em>Figure 11: RMSE of validation dataset for testing variables.</em>
+
+We can see that the sale price with the prediction is not bad same as residual plot. When we put the data into final model and we can get the rmse of model is  20869.6 . In terms of the coefficient in the model, we can notice that most coefficients are reasonable. This model give the positive coefficients for postive features and negative coefficients for drawbacks. For example, we all know that as living_area is large, the sale price will become larger as well and if condition or quality is not good, they will lead the sale price to decrease. But there is a point that is worth to discuss. We think quality will influence house price, but it seems the impact of quality poor won't be an obstacle toward house price. Probably, the sample size is too small, thus, the influence of this feature won't be stronger than others.
 
 ## Discussion
+In this projerct, we only discuss two machine learning models but it still provides many information about predicted household price. Compared with lasso regression, ridge resgreesion is more suitable in this dataset. As far as for future research, we can try random forest or decision trees methods to outperform model.
