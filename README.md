@@ -4,7 +4,9 @@
 * [Overview](#overview)
 * [Exploratory Data Analysis](#exploratory-data-analysis)
     * [Data](#data)
-    * [Analyzing the target variable (sale_price)](#analyzing-the-target-variable-(sale_price))
+    * [Analyzing the Target Variable](#analyzing-the-target-variable)
+    * [Relationship about Continuous Features](#relationship-about-continuous-features)
+    * [Relationship about Categorical Features](#relationship-about-categorical-features)
     * [Preprocessing](preprocessing)
 * [Building Models](#building-models)
 * [Result](#result)
@@ -55,7 +57,7 @@ In this dataset, we have 15 features in Table 1 which consist of continuous vari
 
 <em>Table 1: The attribute for datasets of dataset.</em>
 
-### Analyzing the target variable (sale_price)
+### Analyzing the Target Variable
 There are no negative values in the dataset for sale price and the distribution is right skewed, 
 so we need to tranform this variable it or this will adversly impact our model in Figure 1. We try to transform the distribution 
 by using log function and we can see the data simialr to normal.
@@ -67,6 +69,51 @@ by using log function and we can see the data simialr to normal.
 <img src="/image/house_price3.png" width="410"/> <img src="/image/house_price4.png" width="410"/> 
 
 <em>Figure 2: The distribution of log sale price.</em>
+
+### Relationship about Continuous Features
+According to Figure 3, we can notice that the correaltion of `sale_price` is lower with `year_sold`, `lot_area`, `half_bath` and `bedroom` since there correlation under 0.5. The variable of `living_area` has high correaltion with `full_bath` and `bedroom` and `garage_cars` has high correlation with `garage_area` and `year_build`.
+
+<img src="/image/correlation.png" width="600"/> 
+
+<em>Figure 3: The correlation matrix.</em>
+
+We can see that the variable of `year_built`, `lot_area`, `basement_area`, `living_area`, `half_bath` they are skewed so we need to handle it.
+<table>
+<tr><td>
+   
+| Variables | Skewness |
+| ------ | -------|
+| lot_area |         11.782904 | 
+| living_area |       1.008922 | 
+| half_bath |         0.727706 | 
+| basement_area |     0.529231 | 
+| full_bath |         0.348596 | 
+
+</td><td>
+   
+ | Variables | Skewness |
+| ------ | -------|
+| garage_area |       0.221875 | 
+| bedroom |           0.211698 | 
+| year_sold |         0.073479 | 
+| garage_cars |      -0.050316 | 
+| year_built |        -0.556842 | 
+
+</td></tr> </table>
+
+<em>Table 2: The skewness of continuous variables.</em>
+
+### Relationship about Categorical Features
+It seems sale_price will be influenced by all of categorical variables. We can try to check Figure 4 and Figure 5 which are about
+quality and condition respetively.
+
+<img src="/image/quality.png" width="600"/> 
+
+<em>Figure 4: The distribution of quality variable.</em>
+
+<img src="/image/condition.png" width="600"/> 
+
+<em>Figure 5: The distribution of condition variable.</em>
 
 ## Building Models
 
