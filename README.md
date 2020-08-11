@@ -9,8 +9,8 @@
     * [Relationship about Categorical Features](#relationship-about-categorical-features)
     * [Preprocessing](preprocessing)
 * [Building Models](#building-models)
-    * [Lasso Regression](#lasso-regression)
-    * [Rasso Regression](#ridge-regression)
+    * [Model Comparison](#model-comparison)
+    * [Variable Selection](#variable-selection)
 * [Result](#result)
 * [Discussion](#discussion)
 
@@ -123,14 +123,36 @@ Based on previous analysis, we will use log to transform the variables of `sale_
 ## Building Models
 In this project, we try to use lasso regression and ridge regression to explore this datset because this dataset is high dimensional input. 
 
-### Lasso Regression
-The result of $\alpha$ and RMSE plot in Figure 6.
+### Model Comparison
 
-<img src="/image/condition.png" width="600"/> 
+#### Lasso Regression
+The result of alpha and RMSE plot in Figure 6. In this case it appears that the model's rmses nearly monotonically increase as alpha  increases. This indicates that the CV proceedure is exhibiting a preference for the linear regression mode. However, one of the suggestions employed by Hastie, et al. in their glmnet R package is instead of using the with the smallest mean rmse to instead use the largest value of that has an error metric (rmse) that is within 1 standard error of the minimum value of the error metric (rmse). We can find this value using the lasso_cv_res data frame we previously constructed. RMSE of validation dataset in Figure 7.
 
-<em>Figure 6: $\alpha$ and RMSE plot.</em>
+<img src="/image/lasso1.png" width="600"/> 
+<em>Figure 6: alpha and RMSE plot.</em>
 
-### Ridge Regression
+<img src="/image/lasso3.png" width="600"/> 
+<em>Figure 7: RMSE of validation dataset for lasso regression.</em>
+
+#### Ridge Regression
+The result of alpha and mean test score plot in Figure 8. This plot clearly shows that the value between 6 and 8 is obtained as the minimum of this curve. However, this plot gives us an overly confident view of this choice of this particular value of aplha. RMSE of validation dataset in Figure 9.
+
+<img src="/image/ridge1.png" width="600"/> 
+<em>Figure 8: alpha and mean test score plot.</em>
+
+<img src="/image/ridge3.png" width="600"/> 
+<em>Figure 9: RMSE of validation dataset for ridge regression.</em>
+
+In all variables case, the RMSE of validation dataset is smaller thn training dataset. Therefore, I will choose to use ridge regression model to fit this dataset.
+
+| Method | Traning dataset RMSE | Validation dataset RMSE |
+| ------ | ------ | ------ |
+| Lasso | 20736.2| 20967.1|
+| Ridge | 20085.9 | 20396.3 |
+
+<em>Table 3: The performance of lasso regression and ridge regression.</em>
+
+### Variable Selection
 ## Result
 
 ## Discussion
