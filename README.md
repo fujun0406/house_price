@@ -9,6 +9,8 @@
     * [Relationship about Categorical Features](#relationship-about-categorical-features)
     * [Preprocessing](preprocessing)
 * [Building Models](#building-models)
+    * [Lasso Regression](#lasso-regression)
+    * [Rasso Regression](#ridge-regression)
 * [Result](#result)
 * [Discussion](#discussion)
 
@@ -119,7 +121,16 @@ quality and condition respetively. More deatils about other features can check o
 Based on previous analysis, we will use log to transform the variables of `sale_price`, `year_built`, `lot_area` and `living_area` which can make the distribtion to be more normal. In terms of categorical variables, we will use the module pandas in Python to transform categorical variables into dummy variables.
 
 ## Building Models
+In this project, we try to use lasso regression and ridge regression to explore this datset because this dataset is high dimensional input. 
 
+### Lasso Regression
+The result of $\alpha$ and RMSE plot in Figure 6.
+
+<img src="/image/condition.png" width="600"/> 
+
+<em>Figure 6: $\alpha$ and RMSE plot.</em>
+
+### Ridge Regression
 ## Result
 
 ## Discussion
