@@ -163,7 +163,7 @@ The result of alpha and mean test score plot in Figure 9 shows that the value be
 
 <em>Figure 9: alpha and mean test score plot.</em>
 
-<img src="/image/select_ridge2.png" width="400"/> 
+<img src="/image/select_ridge2.png" width="600"/> 
 
 <em>Figure 10: RMSE of validation dataset for selected variables.</em>
 
@@ -176,7 +176,7 @@ Overview the final model:
 
 After that, we employ this model on testing dataset. The RMSE plot shows in Figure 11. 
 
-<img src="/image/testing.png" width="400"/> 
+<img src="/image/testing.png" width="600"/> 
 
 <em>Figure 11: RMSE of validation dataset for testing variables.</em>
 
