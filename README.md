@@ -128,10 +128,10 @@ In this project, we try to use lasso regression and ridge regression to explore 
 #### Lasso Regression
 The result of alpha and RMSE plot in Figure 6. In this case it appears that the model's rmses nearly monotonically increase as alpha  increases. This indicates that the CV proceedure is exhibiting a preference for the linear regression mode. However, one of the suggestions employed by Hastie, et al. in their glmnet R package is instead of using the with the smallest mean rmse to instead use the largest value of that has an error metric (rmse) that is within 1 standard error of the minimum value of the error metric (rmse). We can find this value using the lasso_cv_res data frame we previously constructed. RMSE of validation dataset in Figure 7.
 
-<img src="/image/lasso1.png" width="600"/> 
+<img src="/image/lasso1.png" width="700"/> 
 <em>Figure 6: alpha and RMSE plot.</em>
 
-<img src="/image/lasso3.png" width="600"/> 
+<img src="/image/lasso3.png" width="700"/> 
 <em>Figure 7: RMSE of validation dataset for lasso regression.</em>
 
 #### Ridge Regression
@@ -141,7 +141,7 @@ The result of alpha and mean test score plot in Figure 8. This plot clearly show
 
 <em>Figure 8: alpha and mean test score plot.</em>
 
-<img src="/image/ridge3.png" width="600"/> 
+<img src="/image/ridge3.png" width="700"/> 
 
 <em>Figure 9: RMSE of validation dataset for ridge regression.</em>
 
@@ -163,7 +163,7 @@ The result of alpha and mean test score plot in Figure 9 shows that the value be
 
 <em>Figure 9: alpha and mean test score plot.</em>
 
-<img src="/image/select_ridge2.png" width="600"/> 
+<img src="/image/select_ridge2.png" width="700"/> 
 
 <em>Figure 10: RMSE of validation dataset for selected variables.</em>
 
@@ -176,7 +176,7 @@ Overview the final model:
 
 After that, we employ this model on testing dataset. The RMSE plot shows in Figure 11. 
 
-<img src="/image/testing.png" width="600"/> 
+<img src="/image/testing.png" width="700"/> 
 
 <em>Figure 11: RMSE of validation dataset for testing variables.</em>
 
