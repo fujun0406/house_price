@@ -137,10 +137,12 @@ The result of alpha and RMSE plot in Figure 6. In this case it appears that the 
 #### Ridge Regression
 The result of alpha and mean test score plot in Figure 8. This plot clearly shows that the value between 6 and 8 is obtained as the minimum of this curve. However, this plot gives us an overly confident view of this choice of this particular value of aplha. RMSE of validation dataset in Figure 9.
 
-<img src="/image/ridge1.png" width="600"/> 
+<img src="/image/ridge1.png" width="400"/> 
+
 <em>Figure 8: alpha and mean test score plot.</em>
 
 <img src="/image/ridge3.png" width="600"/> 
+
 <em>Figure 9: RMSE of validation dataset for ridge regression.</em>
 
 In all variables case, the RMSE of validation dataset is smaller thn training dataset. Therefore, I will choose to use ridge regression model to fit this dataset.
@@ -153,6 +155,20 @@ In all variables case, the RMSE of validation dataset is smaller thn training da
 <em>Table 3: The performance of lasso regression and ridge regression.</em>
 
 ### Variable Selection
+Since the variable of `garage_cars` and `garage_area` have high correlation and the coefficient of `garage_area` is high. And the variable of `living_area` has high correaltion with `full_bath` and `bedroom`. In order to prevent multicollinearity, we will omit the variable of `garage_cars`, `full_bath` and `bedroom`. The coefficient of `ac` and `zoning` also small. That means the influence of those variables may not strong. We also try to omit those variable to see the impact.
+
+The result of alpha and mean test score plot in Figure 9 shows that the value between 6 and 8 is obtained as the minimum in this model and RMSE of validation dataset in Figure 10.
+
+<img src="/image/select_ridge.png" width="400"/> 
+
+<em>Figure 9: alpha and mean test score plot.</em>
+
+<img src="/image/select_ridge2.png" width="400"/> 
+
+<em>Figure 10: RMSE of validation dataset for selected variables.</em>
+
+According to the above, we can notice that this dataset is high dimensional input. And there are some variables are continuous variables. In this project, we consider use ridge regression and lasso regression. Using the Ridge regression can shrink some  𝛽  tend to  0  but still need to consider all of varibales. Using lasso regression can shrink coefficient to 0 but according to the performance of validation dataset, it shows the ridge regression is more better. Then, we base on the reslut of all variables to omit some variables which can prevent multicollinearity issue and simplify the complexity of model.
+
 ## Result
 
 ## Discussion
