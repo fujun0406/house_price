@@ -105,7 +105,7 @@ We can see that the variable of `year_built`, `lot_area`, `basement_area`, `livi
 
 ### Relationship about Categorical Features
 It seems sale_price will be influenced by all of categorical variables. We can try to check Figure 4 and Figure 5 which are about
-quality and condition respetively.
+quality and condition respetively. More deatils about other features can check on jupyter notebook.
 
 <img src="/image/quality.png" width="600"/> 
 
@@ -114,6 +114,9 @@ quality and condition respetively.
 <img src="/image/condition.png" width="600"/> 
 
 <em>Figure 5: The distribution of condition variable.</em>
+
+### Preprocessing
+Based on previous analysis, we will use log to transform the variables of `sale_price`, `year_built`, `lot_area` and `living_area` which can make the distribtion to be more normal. In terms of categorical variables, we will use the module pandas in Python to transform categorical variables into dummy variables.
 
 ## Building Models
 
